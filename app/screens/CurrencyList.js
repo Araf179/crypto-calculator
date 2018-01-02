@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { FlatList, StatusBar, View, StyleSheet } from 'react-native';
+import { Button } from 'react-native-elements';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { changeBaseCurrency, changeQuoteCurrency } from '../actions/currencies';
@@ -48,6 +49,15 @@ class CurrencyList extends Component {
     console.log(this.state.cryptoFilter);
   }
 
+  handleCustomCrypto = (currency) => {
+    console.log(currency);
+    const { type } = this.props.navigation.state.params;
+    if (type === 'base') {
+      this.props.dispatch(changeBaseCurrency(currency.toLowerCase()));
+    }
+    this.props.navigation.goBack(null);
+  }
+
   render() {
     let comparisonCurrency = this.props.baseCurrency;
     if (this.props.navigation.state.params.type === 'quote') {
@@ -60,8 +70,16 @@ class CurrencyList extends Component {
         <SearchInput 
           onChangeText={(term) => { this.handleSearch(term) }} 
           style={styles.searchInput}
-          placeholder="Type a message to search"
+          placeholder="Type a currency to search"
           />
+          {this.props.navigation.state.params.type === 'base' ? (
+          <Button
+          raised
+          onPress={() => this.handleCustomCrypto(this.state.searchTerm)}
+          icon={{name: 'cached'}}
+          backgroundColor = '#87CEEB'
+          title='Search Custom CryptoCurrency' />
+          ) : null}
         <FlatList
           data={this.props.navigation.state.params.type === 'base' ? this.state.cryptoFilter : this.state.currencyFilter}
           renderItem={({ item }) => (
