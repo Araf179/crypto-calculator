@@ -1,11 +1,15 @@
 {
   "expo": {
-    "sdkVersion": "31.0.0",
+    "sdkVersion": "35.0.0",
     "orientation": "portrait",
     "privacy": "public",
     "name": "CryptoCurrency Live Currency Converter",
     "slug": "cryptocurrency-live-currency-converter",
     "version": "0.1.0",
-    "description": "Cryptocurrency to international currency live conversion rates"
+    "description": "Cryptocurrency to international currency live conversion rates",
+    "platforms": [
+      "android",
+      "ios"
+    ]
   }
 }
