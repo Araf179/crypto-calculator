@@ -1,6 +1,5 @@
 {
   "expo": {
-    "sdkVersion": "35.0.0",
     "orientation": "portrait",
     "privacy": "public",
     "name": "CryptoCurrency Live Currency Converter",
