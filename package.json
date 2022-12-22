@@ -8,7 +8,7 @@
       "eslint-plugin-jsx-a11y": "^4.0.0",
       "eslint-plugin-react": "^6.10.3",
       "jest-expo": "^40.0.0",
-      "react-native-scripts": "1.8.1",
+      "react-native-scripts": "1.14.1",
       "react-test-renderer": "16.0.0"
    },
    "main": "./node_modules/expo/AppEntry.js",
